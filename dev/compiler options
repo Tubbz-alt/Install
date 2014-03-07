@@ -1,0 +1,22 @@
+Linker options : 
+	-lcurl
+	-lssl
+	-lcrypto
+	-lboost_regex
+	-lpthread 
+
+
+Link library :
+	/usr/local/lib/libgumbo.so
+	/usr/local/lib/libgumbo.so.1 //unusefull
+
+Compiler options
+	-lmongoclient
+	-lboost_thread-mt
+	-lboost_filesystem
+	-lboost_program_options
+	-lboost_system
+
+Define :
+	Linux
+	_REENTRANT
