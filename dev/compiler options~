@@ -4,8 +4,6 @@ Linker options :
 	-lcrypto
 	-lboost_regex
 	-lpthread 
-	-lmysqlpp
-	-lmysqlclient
 
 
 Link library :
@@ -20,6 +18,8 @@ Compiler options
 	-lboost_filesystem
 	-lboost_program_options
 	-lboost_system
+	-lmysqlpp
+	-lmysqlclient
 
 Define :
 	Linux
