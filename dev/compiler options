@@ -12,7 +12,7 @@ Link library :
 	/usr/local/lib/libgumbo.so
 	/usr/lib/libmysqlpp.so
 	/usr/local/mysql/lib/libmysqlclient.so
-	(/usr/include/mysql search directory)
+	(/usr/include/mysql search directory compiler)
 
 Compiler options
 	-lmongoclient
@@ -20,6 +20,7 @@ Compiler options
 	-lboost_filesystem
 	-lboost_program_options
 	-lboost_system
+-DBOOST_SYSTEM_NO_DEPRECATED
 
 Define :
 	Linux
