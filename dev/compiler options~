@@ -20,6 +20,7 @@ Compiler options
 	-lboost_filesystem
 	-lboost_program_options
 	-lboost_system
+-DBOOST_SYSTEM_NO_DEPRECATED
 
 Define :
 	Linux

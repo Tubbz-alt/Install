@@ -7,6 +7,10 @@ Linker options :
 	-lmysqlpp
 	-lmysqlclient
 
+-lboost_thread
+ -lboost_filesystem
+ -lboost_system
+
 
 Link library :
 	/usr/local/lib/libgumbo.so
