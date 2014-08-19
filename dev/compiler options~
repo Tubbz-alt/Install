@@ -6,6 +6,10 @@ Linker options :
 	-lpthread 
 	-lmysqlpp
 	-lmysqlclient
+	-llzma
+-lboost_thread
+ -lboost_filesystem
+ -lboost_system
 
 
 Link library :
