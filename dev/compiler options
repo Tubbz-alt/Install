@@ -7,6 +7,7 @@ Linker options :
 	-lmysqlpp
 	-lmysqlclient
 	-llzma
+	-ltar
 -lboost_thread
  -lboost_filesystem
  -lboost_system
