@@ -1,6 +1,6 @@
 sudo apt-get install liblzma-dev
 libtar-dev
 
-sudo apt-get install python3-setuptools
-sudo easy_install3 pip
-sudo pip  install peewee
+sudo apt-get install python3-pip
+sudo pip3 install PyMySQL
+sudo pip3  install peewee
