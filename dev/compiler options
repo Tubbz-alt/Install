@@ -11,6 +11,7 @@ Linker options :
 -lboost_thread
  -lboost_filesystem
  -lboost_system
+ -lboost_python
 
 
 Link library :
@@ -18,6 +19,7 @@ Link library :
 	/usr/lib/libmysqlpp.so
 	/usr/local/mysql/lib/libmysqlclient.so
 	(/usr/include/mysql search directory compiler)
+
 
 Compiler options
 	-lmongoclient
@@ -30,3 +32,5 @@ Compiler options
 Define :
 	Linux
 	_REENTRANT
+
+
