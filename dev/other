@@ -7,3 +7,12 @@ sudo pip3 install PyMySQL
 
 
 ./bootstrap.sh --with-python-version=3.4(compiler boost pr la bonne version) 
+
+
+
+#redis
+wget http://download.redis.io/redis-stable.tar.gz
+tar xvzf redis-stable.tar.gz
+cd redis-stable
+make
+sudo pip install redis
