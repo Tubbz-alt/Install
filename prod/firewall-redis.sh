@@ -3,7 +3,7 @@
 #	    	#
 ##         	##
 ###Iptable	###
-##	   		##
+##	   	##
 #	    	#
 
 #On supprime les règles existantes
@@ -40,6 +40,12 @@ iptables -t filter -A OUTPUT -o lo -j ACCEPT
 	
 	# NTP (horloge du serveur) 
 	iptables -t filter -A OUTPUT -p udp --dport 123 -j ACCEPT
+	
+	#DNS
+	iptables -t filter -A OUTPUT -p tcp --dport 53 -j ACCEPT
+	iptables -t filter -A INPUT -p tcp --dport 53 -j ACCEPT
+	iptables -t filter -A OUTPUT -p udp --dport 53 -j ACCEPT
+	iptables -t filter -A INPUT -p udp --dport 53 -j ACCEPT
 
 	#Rsync
 	iptables -t filter -A OUTPUT -p tcp --dport 837 -j ACCEPT

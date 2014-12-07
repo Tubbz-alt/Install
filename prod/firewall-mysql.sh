@@ -34,10 +34,25 @@ iptables -t filter -A OUTPUT -o lo -j ACCEPT
 	iptables -t filter -A OUTPUT -p tcp --dport 21 -j ACCEPT
 	iptables -t filter -A INPUT -p tcp --dport 21 -j ACCEPT
 	
+	
+	#HTTP
+	iptables -t filter -A OUTPUT -p tcp --dport 80 -j ACCEPT
+	iptables -t filter -A INPUT -p tcp --dport 80 -j ACCEPT
+	
+	#HTTPS
+	iptables -t filter -A OUTPUT -p tcp --dport 443 -j ACCEPT
+	iptables -t filter -A INPUT -p tcp --dport 443 -j ACCEPT
+	
 	#Ping
 	iptables -t filter -A INPUT -p icmp -j ACCEPT
 	iptables -t filter -A OUTPUT -p icmp -j ACCEPT
 	
+	#DNS
+	iptables -t filter -A OUTPUT -p tcp --dport 53 -j ACCEPT
+	iptables -t filter -A INPUT -p tcp --dport 53 -j ACCEPT
+	iptables -t filter -A OUTPUT -p udp --dport 53 -j ACCEPT
+	iptables -t filter -A INPUT -p udp --dport 53 -j ACCEPT
+
 	# NTP (horloge du serveur) 
 	iptables -t filter -A OUTPUT -p udp --dport 123 -j ACCEPT
 

@@ -1,0 +1,9 @@
+File which must be altered before installing:
+	-Mnemosyne : manager.c
+	-Mnemosyne : chunk.h #chunk path
+	-Mnemosyne : ressource.h #tmpfile location
+	-Artemis   : sqlfactory.py
+	-Artemis   : redisfactory
+	-Artemis   : deamon-master
+ 	-Artemis   : deamon-slave
+
