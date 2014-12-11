@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sqlservers=()
-redisservers=()
-slaves=(92.222.69.4 ) #ip1 to n
+sqlservers=(92.222.73.42 )
+redisservers=(92.222.73.42 )
+slaves=(92.222.73.6 ) #ip1 to n
 
 login=admin
 sqlmdp="rj7@kAv;8d7_e(E6:m4-w&"
@@ -24,18 +24,19 @@ slave_install () {
 	ssh -l $login $1 sudo bash Artemis/install/install.sh
 
 	ssh -l $login $1 sudo rm -r Mnemosyne Artemis
-	#ssh -l $login $1 sudo reboot 
+	ssh -l $login $1 sudo reboot 
 }
 
 sql_install () {
 	scp -r $sql $login@$1:Sql
-
+	scp -r $artemis/install/tables.sql $login@$1:artemis.sql
+	scp -r $mnemosyne/install/table.sql $login@$1:mnemosyne.sql
+	
 	ssh -l $login $1 sudo bash Sql/install-mysql.sh
 
 	ssh -l $login $1 sudo rm -r Sql
 
-	scp -r $artemis/install/tables.sql $login@$1:artemis.sql
-	scp -r $mnemosyne/install/table.sql $login@$1:mnemosyne.sql
+
 
 	ssh -l $login $1 sudo reboot 
 }
