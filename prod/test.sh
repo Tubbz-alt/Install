@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sqlservers=(92.222.73.42 )
-redisservers=(92.222.73.42 )
-slaves=(92.222.73.6 ) #ip1 to n
+sqlservers=()
+redisservers=()
+slaves=(92.222.73.130   ) #ip1 to n
 
 login=admin
 sqlmdp="rj7@kAv;8d7_e(E6:m4-w&"
@@ -24,7 +24,7 @@ slave_install () {
 	ssh -l $login $1 sudo bash Artemis/install/install.sh
 
 	ssh -l $login $1 sudo rm -r Mnemosyne Artemis
-	ssh -l $login $1 sudo reboot 
+	#ssh -l $login $1 sudo reboot 
 }
 
 sql_install () {
@@ -38,7 +38,7 @@ sql_install () {
 
 
 
-	ssh -l $login $1 sudo reboot 
+	#ssh -l $login $1 sudo reboot 
 }
 
 redis_install () {
@@ -47,7 +47,7 @@ redis_install () {
 	ssh -l $login $1 sudo bash Redis/install-redis.sh
 
 	ssh -l $login $1 sudo rm -r Redis
-	ssh -l $login $1 sudo reboot 
+	#ssh -l $login $1 sudo reboot 
 }
 
 

@@ -57,8 +57,8 @@ iptables -t filter -A OUTPUT -o lo -j ACCEPT
 
 	
 #Protection contre le déni de service, on limite le nbr de connexion à 10co/s
-iptables -A FORWARD -p tcp --syn -m limit --limit 10/second -j ACCEPT	
-iptables -A FORWARD -p udp -m limit --limit 10/second -j ACCEPT
-iptables -A FORWARD -p icmp --icmp-type echo-request -m limit --limit 10/second -j ACCEPT
+#iptables -A FORWARD -p tcp --syn -m limit --limit 10/second -j ACCEPT	
+#iptables -A FORWARD -p udp -m limit --limit 10/second -j ACCEPT
+#iptables -A FORWARD -p icmp --icmp-type echo-request -m limit --limit 10/second -j ACCEPT
 
 	
