@@ -1,8 +1,9 @@
 #!/bin/bash
 
-sqlservers=()
-redisservers=()
-slaves=(92.222.73.130   ) #ip1 to n
+sqlservers=(92.222.72.175 )
+redisservers=(92.222.72.175   )
+rabbitmqservers=(92.222.72.175 )
+slaves=(92.222.71.12      ) #ip1 to n
 
 login=admin
 sqlmdp="rj7@kAv;8d7_e(E6:m4-w&"
@@ -12,6 +13,7 @@ artemis=/home/toor/Github/Athena/Artemis/trunk
 mnemosyne=/home/toor/Github/Athena/Mnemosyne/trunk
 sql=/home/toor/Github/Athena/Install/trunk/prod
 redis=/home/toor/Github/Athena/Install/trunk/prod
+rabbitmq=/home/toor/Github/Athena/Install/trunk/prod
 
 
 
@@ -50,6 +52,15 @@ redis_install () {
 	#ssh -l $login $1 sudo reboot 
 }
 
+rabbitmq_install () {
+	scp -r $rabbitmq $login@$1:Rabbitmq
+	
+	ssh -l $login $1 sudo bash Rabbitmq/install-rabbitmq.sh
+
+	ssh -l $login $1 sudo rm -r Rabbitmq
+	#ssh -l $login $1 sudo reboot 
+}
+
 
 
 for i in ${sqlservers[@]}; do
@@ -66,6 +77,14 @@ for i in ${redisservers[@]}; do
 done;
 
 
+echo waiting
+wait
+echo done waiting
+
+for i in ${rabbitmqservers[@]}; do
+	rabbitmq_install $i &
+done;
+
 
 echo waiting
 wait
@@ -76,6 +95,8 @@ for i in ${slaves[@]}; do
 	slave_install $i &
 done;
 
-
+echo waiting
+wait
+echo done waiting
 
 

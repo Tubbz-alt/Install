@@ -20,17 +20,19 @@ mysql -u root -p"rj7@kAv;8d7_e(E6:m4-w&" -D artemis -e "SOURCE $CURRENT_DIR/../a
 mysql -u root -p"rj7@kAv;8d7_e(E6:m4-w&" -e "CREATE DATABASE mnemosyne"
 mysql -u root -p"rj7@kAv;8d7_e(E6:m4-w&" -D mnemosyne -e "SOURCE $CURRENT_DIR/../mnemosyne.sql"
 
+service mysql restart
+
 #apt-get install -y phpmyadmin
 
 ###
 ###	BEGIN FIREWALL
 ###
-cp $CURRENT_DIR/firewall-mysql.sh /etc/init.d/firewall.sh
+#cp $CURRENT_DIR/firewall-mysql.sh /etc/init.d/firewall.sh
 		
-chmod +x /etc/init.d/firewall.sh
-/etc/init.d/firewall.sh
+#chmod +x /etc/init.d/firewall.sh
+#/etc/init.d/firewall.sh
 		
-update-rc.d firewall.sh defaults
+#update-rc.d firewall.sh defaults
 ###
 ###	END FIREWALL
 ###

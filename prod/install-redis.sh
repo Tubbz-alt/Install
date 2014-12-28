@@ -38,12 +38,12 @@ cp $CURRENT_DIR/conf/redis.conf /etc/redis/6379.conf
 ###
 ###	BEGIN FIREWALL
 ###
-cp $CURRENT_DIR/firewall-redis.sh /etc/init.d/firewall.sh
+#cp $CURRENT_DIR/firewall-redis.sh /etc/init.d/firewall.sh
 		
-chmod +x /etc/init.d/firewall.sh
-/etc/init.d/firewall.sh
+#chmod +x /etc/init.d/firewall.sh
+#/etc/init.d/firewall.sh
 		
-update-rc.d firewall.sh defaults
+#update-rc.d firewall.sh defaults
 ###
 ###	END FIREWALL
 ###
