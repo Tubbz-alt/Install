@@ -1,19 +1,19 @@
 #!/bin/bash
 
-sqlservers=(92.222.72.175 )
-redisservers=(92.222.72.175   )
-rabbitmqservers=(92.222.72.175 )
-slaves=(92.222.71.12      ) #ip1 to n
+sqlservers=(    )
+redisservers=(92.222.85.156       )
+rabbitmqservers=(   )
+slaves=(    ) #ip1 to n
 
 login=admin
 sqlmdp="rj7@kAv;8d7_e(E6:m4-w&"
 
 
-artemis=/home/toor/Github/Athena/Artemis/trunk
-mnemosyne=/home/toor/Github/Athena/Mnemosyne/trunk
-sql=/home/toor/Github/Athena/Install/trunk/prod
-redis=/home/toor/Github/Athena/Install/trunk/prod
-rabbitmq=/home/toor/Github/Athena/Install/trunk/prod
+artemis=/home/toor/Desktop/test_tipe/Artemis/trunk
+mnemosyne=/home/toor/Desktop/test_tipe/Mnemosyne/trunk
+sql=/home/toor/Desktop/test_tipe/Install/trunk/prod
+redis=/home/toor/Desktop/test_tipe/Install/trunk/prod
+rabbitmq=/home/toor/Desktop/test_tipe/Install/trunk/prod
 
 
 
@@ -23,7 +23,7 @@ slave_install () {
 	scp -r $artemis $login@$1:Artemis
 
 	#ssh -l $login $1 sudo bash Mnemosyne/install/install.sh
-	ssh -l $login $1 sudo bash Artemis/install/install.sh
+	ssh -l $login $1 sudo bash Artemis/install/install.sh 
 
 	ssh -l $login $1 sudo rm -r Mnemosyne Artemis
 	#ssh -l $login $1 sudo reboot 

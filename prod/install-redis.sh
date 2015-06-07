@@ -7,7 +7,7 @@ CURRENT_DIR=`dirname $0` #Dossier parent du script d'installation
 ### BEGIN DEPENDENCES
 ###
 apt-get update
-apt-get upgrade
+apt-get -y upgrade
 apt-get install -y build-essential cmake tcl8.5
 ###
 ### END DEPENDENCES

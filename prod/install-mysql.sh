@@ -4,7 +4,7 @@ CURRENT_DIR=`dirname $0` #Dossier parent du script d'installation
 
 
 apt-get update
-apt-get upgrade
+apt-get -y upgrade
 apt-get install -y mysql-server
 
 #Conf
